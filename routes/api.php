@@ -85,10 +85,3 @@ Route::get('/read', function(){
     return 'Public';
 
 });
-Route::filter('editalbe', function(){
-   $user = Auth::user();
-
-   if(!$user->ability(['Admin'], ['can_edit'])){
-       return Redirect::home();
-   }
-});
